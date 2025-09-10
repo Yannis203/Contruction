@@ -611,22 +611,91 @@ footer {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
-
-/* Responsive */
-@media (max-width: 992px) {
-  .about-container,
-  .contact-container,
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  .footer-links {
+/* page about  */
+.about-header {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
     justify-content: flex-start;
-  }
-  
-  .projects-grid,
-  .services-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
+}
+
+.about-header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.about-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    z-index: 2;
+}
+
+.about-header-content {
+    position: relative;
+    max-width: 650px;
+    padding: 3rem;
+    color: white;
+    z-index: 3;
+}
+
+.about-header-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-header-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.about-header-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 5px;
+    background-color: #fd7e14;
+}
+
+/* Animation d'apparition */
+.about-header-content h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.about-header-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards 0.8s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
