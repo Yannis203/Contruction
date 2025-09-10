@@ -679,23 +679,3 @@ footer {
     height: 5px;
     background-color: #fd7e14;
 }
-
-/* Animation d'apparition */
-.about-header-content h1 {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards 0.5s;
-}
-
-.about-header-content p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards 0.8s;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
